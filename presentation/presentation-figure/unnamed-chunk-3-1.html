@@ -1,0 +1,1603 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.min.css'>
+    
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js' type='text/javascript'></script>
+    <script src='//d3js.org/d3.v3.min.js' type='text/javascript'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.min.js' type='text/javascript'></script>
+    <script src='//nvd3.org/assets/lib/fisheye.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 650px;
+      height: 400px;
+    }  
+    </style>
+    
+  </head>
+  <body >
+    
+    <div id = 'CO2xMass' class = 'rChart nvd3'></div>    
+    <script type='text/javascript'>
+ $(document).ready(function(){
+      drawCO2xMass()
+    });
+    function drawCO2xMass(){  
+      var opts = {
+ "dom": "CO2xMass",
+"width":    650,
+"height":    400,
+"x": "CO2_Emissions",
+"y": "Mass",
+"group": "Fuel_Type",
+"type": "scatterChart",
+"id": "CO2xMass" 
+},
+        data = [
+ {
+ "CO2_Emissions":            124,
+"Mass":           1084,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            119,
+"Mass":           1053,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            135,
+"Mass":           1628,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            125,
+"Mass":           1468,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            220,
+"Mass":           1565,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            120,
+"Mass":           1381,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":              0,
+"Mass":           1245,
+"Fuel_Type": "electric" 
+},
+{
+ "CO2_Emissions":            125,
+"Mass":           1230,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            219,
+"Mass":           1953,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            151,
+"Mass":           2075,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            147,
+"Mass":           1645,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            149,
+"Mass":           1631,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            214,
+"Mass":           2159,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            123,
+"Mass":           1711,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            150,
+"Mass":           1120,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            140,
+"Mass":           1445,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            183,
+"Mass":           2203,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            139,
+"Mass":           1600,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            176,
+"Mass":           1920,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            139,
+"Mass":           1160,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            212,
+"Mass":           1690,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            188,
+"Mass":           1930,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            108,
+"Mass":           1420,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            104,
+"Mass":            935,
+"Fuel_Type": "lpg" 
+},
+{
+ "CO2_Emissions":            125,
+"Mass":           1231,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            169,
+"Mass":           1538,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            217,
+"Mass":           2160,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            159,
+"Mass":           1705,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            134,
+"Mass":           1385,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            129,
+"Mass":           1041,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            171,
+"Mass":           1404,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            166,
+"Mass":           1868,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            109,
+"Mass":            915,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            127,
+"Mass":           1490,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            164,
+"Mass":           1499,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            158,
+"Mass":           1920,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            156,
+"Mass":           1294,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            198,
+"Mass":           1763,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            125,
+"Mass":           1620,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            139,
+"Mass":           1733,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            172,
+"Mass":           2287,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":             99,
+"Mass":           1240,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            143,
+"Mass":           1525,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            149,
+"Mass":           1953,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            130,
+"Mass":           1355,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            129,
+"Mass":           1360,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            152,
+"Mass":           1830,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            124,
+"Mass":           1601,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            139,
+"Mass":           1843,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            139,
+"Mass":           1030,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            129,
+"Mass":           1557,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            153,
+"Mass":           1710,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            194,
+"Mass":           1757,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":             98,
+"Mass":           1207,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            144,
+"Mass":           1389,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            184,
+"Mass":           1553,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            138,
+"Mass":           1220,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            119,
+"Mass":           1555,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            135,
+"Mass":           1415,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            143,
+"Mass":           1199,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            140,
+"Mass":           1300,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            144,
+"Mass":           1521,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":             99,
+"Mass":           1090,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            166,
+"Mass":           1468,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            161,
+"Mass":           1880,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            135,
+"Mass":           1369,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            115,
+"Mass":           1632,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            190,
+"Mass":           1882,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            139,
+"Mass":           1359,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            143,
+"Mass":           1695,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            122,
+"Mass":           1290,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            167,
+"Mass":           1459,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            187,
+"Mass":           1380,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            119,
+"Mass":           1048,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            155,
+"Mass":           1375,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            142,
+"Mass":           1074,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            137,
+"Mass":           1440,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            175,
+"Mass":           1613,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            150,
+"Mass":           1594,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            115,
+"Mass":           1229,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            156,
+"Mass":           1536,
+"Fuel_Type": "e85" 
+},
+{
+ "CO2_Emissions":            109,
+"Mass":           1195,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            136,
+"Mass":           1540,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            189,
+"Mass":           2356,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            182,
+"Mass":           1450,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            146,
+"Mass":           1379,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            129,
+"Mass":           1614,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            183,
+"Mass":           1374,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            169,
+"Mass":           1532,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            123,
+"Mass":           1126,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            142,
+"Mass":           1348,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            269,
+"Mass":           1720,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            168,
+"Mass":           1772,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            114,
+"Mass":           1195,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            262,
+"Mass":           2145,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            110,
+"Mass":           1536,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            143,
+"Mass":           1205,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            136,
+"Mass":            979,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            138,
+"Mass":           1050,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            142,
+"Mass":           1665,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            210,
+"Mass":           2015,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            125,
+"Mass":           1190,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            143,
+"Mass":           1600,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            142,
+"Mass":           1755,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            189,
+"Mass":           2045,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            188,
+"Mass":           1947,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            139,
+"Mass":           1592,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            122,
+"Mass":           1560,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            134,
+"Mass":           1520,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            120,
+"Mass":           1296,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            145,
+"Mass":           1495,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            173,
+"Mass":           2180,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            164,
+"Mass":           1334,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            136,
+"Mass":           1885,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            147,
+"Mass":           1217,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            188,
+"Mass":           1525,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            237,
+"Mass":           1630,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            121,
+"Mass":           1136,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            158,
+"Mass":           1645,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            116,
+"Mass":           1394,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":             92,
+"Mass":           1480,
+"Fuel_Type": "electric" 
+},
+{
+ "CO2_Emissions":            182,
+"Mass":           1787,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            185,
+"Mass":           1967,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            211,
+"Mass":           1936,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            109,
+"Mass":           1220,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            125,
+"Mass":           1218,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            164,
+"Mass":           1530,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            163,
+"Mass":           2140,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            184,
+"Mass":           1730,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            119,
+"Mass":           1268,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            196,
+"Mass":           1645,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            114,
+"Mass":           1673,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            142,
+"Mass":           1595,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            137,
+"Mass":           1461,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            127,
+"Mass":           1680,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            135,
+"Mass":           1659,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            105,
+"Mass":           1395,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            135,
+"Mass":           1540,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            207,
+"Mass":           1802,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            150,
+"Mass":           1677,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            222,
+"Mass":           2050,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":             96,
+"Mass":           1605,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            159,
+"Mass":           1277,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            367,
+"Mass":           1925,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            214,
+"Mass":           2207,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            251,
+"Mass":           1645,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            164,
+"Mass":           1511,
+"Fuel_Type": "e85" 
+},
+{
+ "CO2_Emissions":            213,
+"Mass":           2160,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            131,
+"Mass":           1540,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            135,
+"Mass":           1471,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            198,
+"Mass":           2363,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            130,
+"Mass":           1335,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            109,
+"Mass":           1222,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            120,
+"Mass":           1187,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            186,
+"Mass":           1580,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            246,
+"Mass":           2370,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            129,
+"Mass":           1425,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            165,
+"Mass":           1681,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            169,
+"Mass":           2036,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":             99,
+"Mass":           1271,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            189,
+"Mass":           2215,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            104,
+"Mass":           1715,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            153,
+"Mass":           1810,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            155,
+"Mass":           1400,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            113,
+"Mass":           1328,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            155,
+"Mass":           1340,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            164,
+"Mass":           1269,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            114,
+"Mass":            878,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            237,
+"Mass":           1792,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            119,
+"Mass":           1571,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            180,
+"Mass":           1457,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            117,
+"Mass":           1500,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            153,
+"Mass":           1977,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            213,
+"Mass":           2380,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            229,
+"Mass":           2354,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            165,
+"Mass":           1326,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            139,
+"Mass":           1409,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            120,
+"Mass":           1526,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            151,
+"Mass":           1472,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            119,
+"Mass":           1212,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            177,
+"Mass":           1709,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            295,
+"Mass":           1680,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            104,
+"Mass":           1163,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            118,
+"Mass":           1085,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            123,
+"Mass":           1625,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            134,
+"Mass":           1805,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            119,
+"Mass":           1494,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            217,
+"Mass":           1815,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            147,
+"Mass":           1520,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            232,
+"Mass":           2525,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            113,
+"Mass":           1249,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            267,
+"Mass":           2859,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            103,
+"Mass":           1200,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            159,
+"Mass":           1360,
+"Fuel_Type": "e85" 
+},
+{
+ "CO2_Emissions":            119,
+"Mass":           1901,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            128,
+"Mass":           1320,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            232,
+"Mass":           2079,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            143,
+"Mass":           1513,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            136,
+"Mass":           1780,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            160,
+"Mass":           1571,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            122,
+"Mass":           1250,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            163,
+"Mass":           1940,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            182,
+"Mass":           1543,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            137,
+"Mass":           1535,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            172,
+"Mass":           2020,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            273,
+"Mass":           1995,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            162,
+"Mass":           1730,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":              0,
+"Mass":           1214,
+"Fuel_Type": "electric" 
+},
+{
+ "CO2_Emissions":            259,
+"Mass":           1555,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            149,
+"Mass":           1505,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            164,
+"Mass":           1506,
+"Fuel_Type": "e85" 
+},
+{
+ "CO2_Emissions":            167,
+"Mass":           1836,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            119,
+"Mass":           1017,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            213,
+"Mass":           2180,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            144,
+"Mass":           1440,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            146,
+"Mass":           1825,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            224,
+"Mass":           2422,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            149,
+"Mass":           1447,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            304,
+"Mass":           1999,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            339,
+"Mass":           2684,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            134,
+"Mass":           1664,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            128,
+"Mass":           1577,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            159,
+"Mass":           1805,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            133,
+"Mass":           1505,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":             87,
+"Mass":           1108,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            133,
+"Mass":           1804,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            137,
+"Mass":           1188,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            130,
+"Mass":           1191,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            140,
+"Mass":           1482,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            165,
+"Mass":           1650,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            116,
+"Mass":           1097,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":             89,
+"Mass":           1485,
+"Fuel_Type": "electric" 
+},
+{
+ "CO2_Emissions":            195,
+"Mass":           2065,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            145,
+"Mass":           1680,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            218,
+"Mass":           1811,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            184,
+"Mass":           1608,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            123,
+"Mass":           1730,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":             87,
+"Mass":           1120,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            149,
+"Mass":           1216,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            120,
+"Mass":           1045,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":             99,
+"Mass":            915,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            145,
+"Mass":           1515,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            110,
+"Mass":            973,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            123,
+"Mass":           1125,
+"Fuel_Type": "lpg" 
+},
+{
+ "CO2_Emissions":            155,
+"Mass":           1150,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":             99,
+"Mass":            949,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            154,
+"Mass":           1608,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            208,
+"Mass":           2186,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            169,
+"Mass":           1734,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            216,
+"Mass":           2241,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            209,
+"Mass":           2700,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            182,
+"Mass":           1525,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            289,
+"Mass":           1989,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            238,
+"Mass":           1715,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            139,
+"Mass":           1155,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            109,
+"Mass":           1010,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            132,
+"Mass":           1350,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            114,
+"Mass":           1326,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            184,
+"Mass":           1885,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            194,
+"Mass":           2138,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            189,
+"Mass":           1805,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            136,
+"Mass":           1614,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            107,
+"Mass":           1505,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            147,
+"Mass":           1360,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            116,
+"Mass":           1440,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            172,
+"Mass":           1735,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            189,
+"Mass":           1777,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            138,
+"Mass":           1420,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":             99,
+"Mass":           1260,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            219,
+"Mass":           1725,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            152,
+"Mass":           1591,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":              0,
+"Mass":           1715,
+"Fuel_Type": "electric" 
+},
+{
+ "CO2_Emissions":            161,
+"Mass":           1308,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            158,
+"Mass":           1360,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            165,
+"Mass":           1255,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            171,
+"Mass":           1485,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            226,
+"Mass":           1940,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            164,
+"Mass":           1550,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            157,
+"Mass":           1595,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            149,
+"Mass":           1475,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            125,
+"Mass":           1391,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            180,
+"Mass":           1368,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            131,
+"Mass":           1765,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            124,
+"Mass":           1471,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            133,
+"Mass":           1115,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            294,
+"Mass":           2744,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            199,
+"Mass":           2111,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            135,
+"Mass":           1241,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":             99,
+"Mass":            965,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            161,
+"Mass":           1635,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            133,
+"Mass":           1041,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            107,
+"Mass":           1280,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            144,
+"Mass":           1348,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            135,
+"Mass":           1503,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            168,
+"Mass":           1976,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            149,
+"Mass":           1721,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            110,
+"Mass":            970,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            264,
+"Mass":           2075,
+"Fuel_Type": "petrol" 
+},
+{
+ "CO2_Emissions":            211,
+"Mass":           2076,
+"Fuel_Type": "diesel" 
+},
+{
+ "CO2_Emissions":            204,
+"Mass":           2015,
+"Fuel_Type": "petrol" 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .margin({
+ "left":    100 
+})
+  .color([ "red", "green", "blue", "yellow", "black", "grey", "purple" ])
+  .tooltipContent( function(key, x, y, e){ 
+          return '<h5><b>Vehicle mass</b>: ' + e.point.Mass + '<br>' + '<b>CO2 emissions</b>: ' 
+            + e.point.CO2_Emissions + '<br>'
+            + '</h5>'
+        } )
+          
+        
+
+        
+        
+        
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+    
+    <script></script>    
+  </body>
+</html>
